@@ -65,12 +65,13 @@ public class TipCalculatorActivity extends Activity {
 	}
 
 	private void setupSeekBarListner() {
-		sbService.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-			final int stepSize = 1;
+		sbService.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {			
+			final int stepSize = 1; // Configurable.
 
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progresValue,
 					boolean fromUser) {
+				// Logic to configure stepSize in case it is other than 1.
 				progresValue = ((int) Math.round(progresValue / stepSize)) * stepSize;
 				seekBar.setProgress(progresValue);
 				tvServiceValue.setText(Integer.toString(seekBar.getProgress()) + "%");
