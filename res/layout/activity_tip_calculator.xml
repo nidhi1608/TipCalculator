@@ -1,0 +1,238 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:focusable="true"  
+    android:focusableInTouchMode="true"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/tvCheckAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvCheckAmount" />
+
+    <TextView
+        android:id="@+id/tvCheckAmountDollarSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCheckAmount"
+        android:text="@string/tvDollarSign"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="32sp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/etCheckAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvCheckAmountDollarSign"
+        android:layout_toRightOf="@+id/tvCheckAmountDollarSign"
+        android:layout_alignBottom="@+id/tvCheckAmountDollarSign"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="32sp"
+        android:imeOptions="actionDone"
+        android:inputType="numberDecimal" />
+    
+    <TextView
+        android:id="@+id/tvService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvCheckAmountDollarSign"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="20dp"
+        android:text="@string/tvService" />
+    
+    <TextView
+        android:id="@+id/tvServiceValue"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="32sp"
+        android:gravity="right"
+        android:layout_below="@+id/tvService"/>
+    
+    <SeekBar
+        android:id="@+id/sbService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvServiceValue"
+        android:layout_below="@+id/tvService"
+        android:layout_marginTop="8dp"
+        android:max="50" />
+    
+    <TextView
+        android:id="@+id/tvSplit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/sbService"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tcSplit" />
+    
+    <TextView
+        android:id="@+id/tvSplitValue"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="32sp"
+        android:gravity="right"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/tvSplit"/>    
+
+    <RatingBar
+        android:id="@+id/rbSplit"
+        style="@style/customRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSplit"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/tvSplitValue"
+        android:numStars="5"
+        android:rating="1.0"
+        android:stepSize="1.0" />    
+        
+    <ImageButton
+        android:id="@+id/btnAddPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingRight="5dp"
+        android:layout_below="@+id/tvSplit"
+        android:layout_marginTop="10dp"
+        android:layout_alignBaseline="@+id/rbSplit"
+        android:layout_toRightOf="@+id/rbSplit"
+        android:fontFamily="sans-serif-light"
+        android:src="@drawable/additem"
+        android:background="@null"
+        android:onClick="onClickAddPerson"
+    	android:contentDescription="@drawable/additem"/>
+
+    <RelativeLayout
+        android:id="@+id/tipOutput"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/rbSplit"
+        android:layout_marginTop="20dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:padding="20dp" >
+    
+    <TextView
+        android:id="@+id/tvTotalWithTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvTotalWithTip" />
+
+    <TextView
+        android:id="@+id/tvTotalWithTipDollarSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvTotalWithTip"
+        android:text="@string/tvDollarSign"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="32sp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvTotalWithTipValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTotalWithTipDollarSign"
+        android:layout_alignBottom="@+id/tvTotalWithTipDollarSign"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="32sp"
+        android:layout_toRightOf="@+id/tvTotalWithTipDollarSign"/>
+
+    <TextView
+        android:id="@+id/tvTotalPerPerson"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTotalWithTipDollarSign"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvTotalPerPerson" />
+
+    <TextView
+        android:id="@+id/tvTotalPerPersonDollarSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTotalPerPerson"
+        android:layout_toRightOf="@+id/tvTotalPerPerson"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvDollarSign" />
+
+    <TextView
+        android:id="@+id/tvTotalPerPersonValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTotalPerPersonDollarSign"
+        android:fontFamily="sans-serif-light"
+        android:layout_toRightOf="@+id/tvTotalPerPersonDollarSign" />
+
+    <TextView
+        android:id="@+id/tvTotalTip"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTotalPerPerson"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvTotalTip" />
+
+    <TextView
+        android:id="@+id/tvTotalTipDollarSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTotalTip"
+        android:layout_toRightOf="@+id/tvTotalTip"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvDollarSign" />
+
+    <TextView
+        android:id="@+id/tvTotalTipValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTotalTipDollarSign"
+        android:fontFamily="sans-serif-light"
+        android:layout_toRightOf="@+id/tvTotalPerPersonDollarSign"/>
+
+    <TextView
+        android:id="@+id/tvTipPerPerson"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvTotalTip"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvTipPerPerson" />
+    
+    <TextView
+        android:id="@+id/tvTipPerPersonDollarSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTipPerPerson"
+        android:layout_toRightOf="@+id/tvTipPerPerson"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/tvDollarSign" />
+
+    <TextView
+        android:id="@+id/tvTipPerPersonValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTipPerPersonDollarSign"
+        android:fontFamily="sans-serif-light"
+        android:layout_toRightOf="@+id/tvTipPerPersonDollarSign" />
+    
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tip Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="tvCheckAmount">CHECK AMOUNT</string>
+    <string name="tvDollarSign">$</string>
+    <string name="tvService">TIP PERCENT</string>
+    <string name="tcSplit">SPLIT</string>
+    <string name="btnSubtract">-</string>
+    <string name="btnAdd">+</string>
+    <string name="tvTotalWithTip">TOTAL WITH TIP</string>
+    <string name="tvTotalPerPerson">TOTAL PER PERSON</string>
+    <string name="tvTotalTip">TOTAL TIP</string>
+    <string name="tvTipPerPerson">TIP PER PERSON</string>
+</resources>
