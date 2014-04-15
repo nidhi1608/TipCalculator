@@ -1,0 +1,4 @@
+TipCalculator
+=============
+
+Simple tip calculator
